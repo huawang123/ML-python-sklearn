@@ -23,14 +23,10 @@ def classify0(inX, dataset, labels, k):
     labels 是训练样本标签
     k 是top k最相近的
     """
-    # shape返回矩阵的[行数，列数]，
-    # 那么shape[0]获取数据集的行数，
-    # 行数就是样本的数量
     dataSetSize = dataset.shape[0]
 
     """
-    下面的求距离过程就是按照欧氏距离的公式计算的。
-    即 根号(x^2+y^2)
+    欧氏距离
     """
 
     diffMat = tile(inX, (dataSetSize, 1)) - dataset

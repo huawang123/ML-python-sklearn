@@ -66,8 +66,6 @@ def main(train_data_path, test_data_path, top_k):
         result = getResponse(neighbors)
         predictions.append([index + 1, result])
         print(">predicted = " + repr(result))
-        if index > 2:
-            break
     columns = ['ImageId', 'Label']
     save_file = pd.DataFrame(columns=columns, data=predictions)
     save_file.to_csv('prediction.csv', index=False, encoding="utf-8")

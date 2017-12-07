@@ -34,7 +34,7 @@ class setup_tree(object):
         if nearest_region_node_parents.parent == None:
             return nearest_region_node, current_distant
 
-        if abs((nearest_region_node.parent.data[nearest_region_node.parent.dim] -
+        if abs((nearest_region_node_parents.parent.data[nearest_region_node_parents.parent.dim] -
                     target[nearest_region_node.parent.dim])) < current_distant:
             if list(nearest_region_node.data) == list(nearest_region_node.parent.l_child_node.data):
                 if not nearest_region_node.parent.r_child_node == None:

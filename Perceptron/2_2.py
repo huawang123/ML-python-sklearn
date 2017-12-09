@@ -11,7 +11,7 @@ class preceptron(object):
         self.data = data
         self.label = label
 
-    def func(self):
+    def model(self):
         gram_matrix = self.__get_gram_matrix(self.data)
         flag = True
         index = 0
@@ -41,5 +41,5 @@ class preceptron(object):
             return
 
 
-w, b = preceptron(data,label).func()
+w, b = preceptron(data,label).model()
 print('W %s, \nb %s.\n' % (w, b))

@@ -1,6 +1,8 @@
 
 # ML-python-sklearn
 
+主要目的：辅助自己理解相关概念……
+
 基于python和sklearn编写的机器学习的代码辅助理解概念
 
 

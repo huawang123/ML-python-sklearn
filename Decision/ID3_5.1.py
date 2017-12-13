@@ -70,12 +70,6 @@ class Id3_tree(object):
                 h = self.__caclulate_hd(labels[dx])
                 Hda[feature_index] += p * h
         return Hda
-def predict(test_set,tree):
-    result = []
-    for features in test_set:
-        tmp_predict = tree.predict(features)
-        result.append(tmp_predict)
-    return np.array(result)
 
 data = np.array([[1,2,2,3],
                  [1,2,2,2],
@@ -93,7 +87,7 @@ data = np.array([[1,2,2,3],
                  [3,1,2,1],
                  [3,2,2,3]])
 label = np.array([0,0,1,1,0,0,0,1,1,1,1,1,1,1,0])
-
+target = [3,1,2,1]
 id3_tree = Id3_tree(data, label, [i for i in range(4)], 0.1)
-prediction = id3_tree.root.predict([3,1,2,1])
-print('Belong %s' % prediction)
+prediction = id3_tree.root.predict(target)
+print('Target belong %s' % prediction)

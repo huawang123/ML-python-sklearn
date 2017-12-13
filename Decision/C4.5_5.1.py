@@ -73,13 +73,6 @@ class C45_tree(object):
                 Ha[feature_index] -= p * np.log2(p)
         return Hda, Ha
 
-def predict(test_set,tree):
-    result = []
-    for features in test_set:
-        tmp_predict = tree.predict(features)
-        result.append(tmp_predict)
-    return np.array(result)
-
 data = np.array([[1,2,2,3],
                  [1,2,2,2],
                  [1,1,2,2],

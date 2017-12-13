@@ -17,7 +17,7 @@ class Tree(object):
         tree = self.dict[features[self.feature_index]]
         return tree.predict(features)
 
-class Id3_tree(object):
+class C45_tree(object):
     def __init__(self, data, label, features, epsilon):
         self.leaf = 'leaf'
         self.internal = 'internal'
@@ -96,7 +96,7 @@ data = np.array([[1,2,2,3],
                  [3,1,2,1],
                  [3,2,2,3]])
 label = np.array([0,0,1,1,0,0,0,1,1,1,1,1,1,1,0])
-
-id3_tree = Id3_tree(data, label, [i for i in range(4)], 0.1)
-prediction = id3_tree.root.predict([3,1,2,1])
-print('Belong %s' % prediction)
+target = [3,1,2,1]
+c45_tree = C45_tree(data, label, [i for i in range(4)], 0.1)
+prediction = c45_tree.root.predict([3,1,2,1])
+print('Target belong %s' % prediction)

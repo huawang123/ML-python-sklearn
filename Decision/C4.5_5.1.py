@@ -91,5 +91,5 @@ data = np.array([[1,2,2,3],
 label = np.array([0,0,1,1,0,0,0,1,1,1,1,1,1,1,0])
 target = [3,1,2,1]
 c45_tree = C45_tree(data, label, [i for i in range(4)], 0.1)
-prediction = c45_tree.root.predict([3,1,2,1])
+prediction = c45_tree.root.predict(target)
 print('Target belong %s' % prediction)

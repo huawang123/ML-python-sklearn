@@ -18,7 +18,7 @@ def plot_w(weights, data, label):
         else:
             xcord2.append(data[i][0]); ycord2.append(data[i][1])
     fig = plt.figure()
-    ax = fig.add_subplot(111)
+     ax = fig.add_subplot(111)
     ax.scatter(xcord1, ycord1, s=30, c='red', marker='s')
     ax.scatter(xcord2, ycord2, s=30, c='green')
     if weights is not None:
@@ -56,7 +56,7 @@ class LogisticRegression(object):
         for k in range(maxcycles):  # 最大迭代次数
             h = self.__sigmoid(np.matmul(x, self.weights.transpose()))  # 矩阵内积
             error = (y - h)  # 向量减法
-            self.weights += lr * np.matmul(x.transpose(), np.array(error))  # 矩阵内积
+            self.weights += 1.0 / len(x) * lr * np.matmul(x.transpose(), np.array(error))  # 矩阵内积
         plot_w(self.weights, x, y)
 
     def predict(self, x):

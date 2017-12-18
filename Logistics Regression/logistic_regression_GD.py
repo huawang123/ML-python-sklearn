@@ -58,7 +58,6 @@ class LogisticRegression(object):
             error = (y - h)  # 向量减法
             self.weights += lr * np.matmul(x.transpose(), np.array(error))  # 矩阵内积
         plot_w(self.weights, x, y)
-        return self.weights
 
     def predict(self, x):
         x = list(x)

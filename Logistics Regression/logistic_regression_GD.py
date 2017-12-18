@@ -56,7 +56,7 @@ class LogisticRegression(object):
         for k in range(maxcycles):  # 最大迭代次数
             h = self.__sigmoid(np.matmul(x, self.weights.transpose()))  # 矩阵内积
             error = (y - h)  # 向量减法
-            self.weights += 1.0 / len(x) * lr * np.matmul(x.transpose(), np.array(error))  # 矩阵内积
+            self.weights += lr * np.matmul(x.transpose(), np.array(error))  # 矩阵内积
         plot_w(self.weights, x, y)
 
     def predict(self, x):

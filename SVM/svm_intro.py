@@ -57,4 +57,4 @@ if __name__ == "__main__":
     plt.grid(b=True, ls=':')
     plt.tight_layout(pad=1.5)
     plt.show()
-    plt.savefig('/home/wh/as.png', dpi=300)
+    plt.savefig('svm.png', dpi=300)
